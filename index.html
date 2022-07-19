@@ -43,6 +43,45 @@
 
 <h2>Write code to show implementation of flex</h2> 
 
+<xmp>
+
+    HTML Code 
+
+
+    <div class="flex-container">
+        <div class="flex-item">
+    
+        </div>
+        <div class="flex-item">
+            
+        </div>
+        <div class="flex-item">
+            
+        </div>
+    </div>
+
+
+
+    CSS 
+
+    .flex-container {
+        height: 40vh;
+        background-color: bisque; 
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        padding: 40px;
+    }
+    
+    .flex-item {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+    }
+</xmp>
+
+<br> <br>
+
 
 <div class="flex-container">
     <div class="flex-item">
@@ -58,6 +97,9 @@
 
 
 <h2>Show implementation of transition</h2> 
+<xmp>
+    HTML code 
+
     <div class="trn">
         <div class="box2">
 
@@ -65,10 +107,219 @@
     </div>
 
 
-<!-- Show implementation of transformation
-Show implementation of grid
-What are CSS combinators 
-What are pseudo selectors in CSS
-<input type="submit" value="">
+
+
+    CSS 
+
+    .trn {
+        height: 50vh;
+        position: relative;
+        background-color: bisque;
+    }
+    
+    .box2 {
+        width: 100px;
+        height: 100px;
+        transition: all 3s linear;
+        background-color: green;
+    }
+
+
+</xmp>
+
+    <div class="trn">
+        <div class="box2">
+
+        </div>
+    </div>
+
+
+<h2>Show implementation of transformation</h2> 
+
+<xmp>
+    HTML code
+
+    <div class="transform1">
+        <div class="transform2">
+    
+        </div>
+    </div>
+
+
+
+    CSS
+
+    .transform1 {
+        position: relative;
+        width: 60%;
+        height: 250px;
+        margin: 10px auto;
+        background-color: bisque;
+    }
+    
+    .transform2 {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        left: 10%;
+        top: calc((250px - 120px) / 2);
+        background-color: rgb(31, 149, 222);
+        transform: translateX(60px);
+    }
+
+</xmp>
+
+<br><br>
+
+<div class="transform1">
+    <div class="transform2">
+
+    </div>
+</div>
+
+<h2>Show implementation of grid</h2> 
+
+<xmp>
+    
+    HTML Code
+
+    </div class="grid-container"\>
+        <div class="grid-item">first</div>
+        <div class="grid-item">second</div>
+        <div class="grid-item">third</div>
+        <div class="grid-item">fourth</div>
+        <div class="grid-item">fifth</div>
+        <div class="grid-item">sixth</div>
+        <div class="grid-item">seventh</div>
+        <div class="grid-item">eighth</div>
+        <div class="grid-item">ninth</div>
+    </div>
+
+
+
+
+
+    CSS 
+
+    .grid-container {
+        background-color: bisque;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+        /* justify-content: space-evenly; */
+    }
+    
+    .grid-item {
+        background-color: black;
+        color: white;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+</xmp>
+
+<br> <br>
+
+<div class="grid-container">
+    <div class="grid-item">first</div>
+    <div class="grid-item">second</div>
+    <div class="grid-item">third</div>
+    <div class="grid-item">fourth</div>
+    <div class="grid-item">fifth</div>
+    <div class="grid-item">sixth</div>
+    <div class="grid-item">seventh</div>
+    <div class="grid-item">eighth</div>
+    <div class="grid-item">ninth</div>
+</div>
+
+<h2>What are CSS combinators </h2> 
+
+<pre>
+    There are four types of combinators we use in CSS: 
+
+    1. space ( ): to select the descedents
+    2. greater than symbol (>): to select the children only
+    3. plus sign (+): to select the imidiate sibling
+    4. tilda (~): to select all the next siblings under the same parent
+</pre>
+
+<xmp>
+    Example
+
+
+    HTML code
+
+    <div class="parent">
+        <div class="gen">
+            <p class="grand-child"></p>
+        </div>
+        <p class="one"></p>
+        <h4 class="strange"></h4>
+        <p class="two"></p>
+        <p class="three"></p>
+        <p class="four"></p>
+
+    </div>
+
+
+    CSS combinators
+    .gen {
+        height: 60px;
+        background-color: bisque;
+    }
+
+    .parent .grand-child {
+        height: 30px;
+        background-color: blue;
+    }
+
+    .parent > h4 {
+        height: 30px;
+        background-color: green;
+    }
+
+    .gen + .one {
+        height: 30px;
+        background-color: red;
+    }
+
+    .two ~ p {
+        height: 30px;
+        background-color: yellow;
+    }
+</xmp>
+
+<br> <br>
+
+<div class="parent">
+    <div class="gen">
+        div.gen
+        <p class="grand-child"> grandchild</p>
+    </div>
+    <p class="one">one</p>
+    <h4 class="strange">strange</h4>
+    <p class="two">two</p>
+    <p class="three">three</p>
+    <p class="four">four</p>
+
+</div>
+
+<h2>What are pseudo selectors in CSS</h2> 
+
+<pre>
+    pseudo-class selectors are such as:
+
+    :hover --> gets activated when cursor is hovered about the selected element or class
+    :visited --> it selects the link which have already been visited by the user on the same page
+    :active --> gets activated when we click or select that element or class
+    :focus --> focus on the currently select input or any element
+    :enabled --> to enable the selected 
+    :Disable --> to disable the selected
+
+</pre>
+
+
+
 </body>
 </html>
